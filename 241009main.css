@@ -4,7 +4,22 @@ body{
 
 language{
     justify-content: space-between;
+    list-style:none;
+    display:flex;
 }
+
+language ul li a{
+        display: block;
+        text-decoration: none;
+        color: #666;
+        padding:10px;
+        transition:all 0.3s;
+    }
+
+    language ul li.current a,
+    language ul li a:hover{
+        color:#fff;
+    }
 
 .parent {
     display: grid;
@@ -88,6 +103,9 @@ language{
 
     footer{
         padding: 50px 0;
+        display:flex;
+        justify-content:center;
+        
     }
 
     .accordion-area{
