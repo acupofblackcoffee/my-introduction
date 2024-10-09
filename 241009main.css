@@ -1,0 +1,235 @@
+.main{
+    background: #C5956B;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+    
+.div1 {
+    grid-column: span 5 / span 5;
+}
+
+.div2 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-row-start: 2;
+}
+
+.div3 {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+    grid-row-start: 2;
+}
+
+.div4 {
+    grid-column: span 5 / span 5;
+    grid-row-start: 5;
+}
+        
+
+/*========= 現在地表示のためのCSS ===============*/
+
+    #header{
+        position: fixed;/*header固定*/
+        height: 70px;/*Headerの高さ設定*/
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background:#b57e4f;
+        color:#fff;
+        text-align: center;
+    }
+
+
+    /* 以下はレイアウトのための CSS*/
+
+    nav ul{
+        list-style: none;
+        display: flex;
+    }
+
+    nav ul li a{
+        display: block;
+        text-decoration: none;
+        color: #666;
+        padding:10px;
+        transition:all 0.3s;
+    }
+
+    nav ul li.current a,
+    nav ul li a:hover{
+        color:#fff;
+    }
+
+    @media screen and (max-width:768px) {
+        nav ul li a:hover{
+        color: #666;
+        }
+
+        nav ul li.current a {
+        color:#fff;
+        }
+    }
+
+    section{
+        padding: 300px 0;
+    }
+
+    footer{
+        padding: 50px 0;
+    }
+
+    .accordion-area{
+        list-style: none;
+        width: 96%;
+        max-width: 900px;
+        margin:0 auto;
+    }
+
+    .accordion-area li{
+        margin: 10px 0;
+    }
+
+    .accordion-area section {
+        border: 1px solid #ccc;
+    }
+
+/*アコーディオンタイトル*/
+    .title {
+        position: relative;/*+マークの位置基準とするためrelative指定*/
+        cursor: pointer;
+        font-size:1rem;
+        font-weight: normal;
+        padding: 3% 3% 3% 50px;
+        transition: all .5s ease;
+    }
+
+    /*アイコンの＋と×*/
+    .title::before,
+    .title::after{
+        position: absolute;
+        content:'';
+        width: 15px;
+        height: 2px;
+        background-color: #333;
+        
+    }
+    .title::before{
+        top:48%;
+        left: 15px;
+        transform: rotate(0deg);
+        
+    }
+    .title::after{    
+        top:48%;
+        left: 15px;
+        transform: rotate(90deg);
+
+    }
+    /*　closeというクラスがついたら形状変化　*/
+    .title.close::before{
+        transform: rotate(45deg);
+    }
+
+    .title.close::after{
+        transform: rotate(-45deg);
+    }
+
+    /*アコーディオンで現れるエリア*/
+    .box {
+        display: none;/*はじめは非表示*/
+        background: #f3f3f3;
+        margin:0 3% 3% 3%;
+        padding: 3%;
+    }
+
+/*===モーダル表示のためのcss　*/
+
+    .hide-area{/*モーダル表示をする場所をあらかじめ隠す*/
+        display: none;
+    }
+
+    .modaal-fullscreen .modaal-content-container{/*full画面の色設定*/
+        background: #333;
+        color: #fff;
+        text-align: center;
+    }
+
+    .modaal-fullscreen .modaal-close{/*ボタンの色、位置*/
+        background:none;
+        right:20px;
+    }
+
+    /*クローズボタンの×の色変更*/
+    .modaal-close:focus:after,
+    .modaal-close:focus:before,
+    .modaal-close:hover:after,
+    .modaal-close:hover:before{
+        background:#666;
+    }
+
+    /*キャプション*/
+    .caption{
+        display: block;
+        padding: 10px 0;
+    }
+
+    /*===　サムネイル表示のためのcss　*/
+
+    .gallery{/*ベースになるギャラリーを横並びに*/
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .gallery li{
+        width:33.333%;
+        padding: 0 10px;
+    list-style:none;
+    }
+
+    /*画像の横幅を100%にしてレスポンシブ化*/
+    img{
+        max-width:100%;
+        height:auto;
+        vertical-align: bottom;/*画像の下にできる余白を削除*/
+    }
+
+    .fluid {
+        width:60%;/*横幅*/
+        height: 60%;/*縦幅*/
+        background: #1D3461;/*背景色*/
+        animation: fluidrotate 30s ease 0s infinite;/*アニメーションの設定*/
+      }
+      
+      @keyframes fluidrotate {  
+            
+      0%, 100% {
+          border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+      }
+      14% {
+          border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+      }
+      28% {
+          border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+      }
+      42% {
+          border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+      }
+      56% {
+          border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+      }
+      70% {
+          border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+      }
+      84% {
+          border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+      }
+            
+      }
+
