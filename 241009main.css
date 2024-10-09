@@ -206,8 +206,8 @@ language ul{
     }
 
     .fluid {
-        width:60%;/*横幅*/
-        height: 60%;/*縦幅*/
+        width:80vh;/*横幅*/
+        height: 60vh;/*縦幅*/
         background: #1D3461;/*背景色*/
         animation: fluidrotate 30s ease 0s infinite;/*アニメーションの設定*/
       }
