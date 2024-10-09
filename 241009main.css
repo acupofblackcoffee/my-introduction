@@ -1,5 +1,5 @@
 .body{
-    background: #C5956B;
+    background-color: #C5956B;
 }
 
 .parent {
@@ -78,7 +78,7 @@
     }
 
     section{
-        padding: 300px 0;
+        padding: 80px 100px;
     }
 
     footer{
