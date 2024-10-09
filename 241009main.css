@@ -1,5 +1,9 @@
-.body{
+body{
     background-color: #C5956B;
+}
+
+language ul{
+    justify-content: space-between;
 }
 
 .parent {
@@ -44,6 +48,7 @@
         background:#b57e4f;
         color:#fff;
         text-align: center;
+        border-bottom:20px;
     }
 
 
