@@ -103,6 +103,7 @@ language ul{
 
     .accordion-area section {
         border: 1px solid #ccc;
+        padding:0px;
     }
 
 /*アコーディオンタイトル*/
