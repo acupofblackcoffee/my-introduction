@@ -2,24 +2,14 @@ body{
     background-color: #C5956B;
 }
 
-language{
-    justify-content: space-between;
-    list-style:none;
-    display:flex;
+photo{
+    max-width: 400px;
+    max-height: 400px;
+    background:#FFF;
+    width: 200px;
+    height: 200px;
+    justify-content: center;"
 }
-
-language ul li a{
-        display: block;
-        text-decoration: none;
-        color: #666;
-        padding:10px;
-        transition:all 0.3s;
-    }
-
-    language ul li.current a,
-    language ul li a:hover{
-        color:#fff;
-    }
 
 .parent {
     display: grid;
@@ -86,6 +76,33 @@ language ul li a{
     nav ul li a:hover{
         color:#fff;
     }
+
+    language{
+        justify-content: space-between;
+        list-style:none;
+        display:flex;
+    }
+
+    language ul li{
+            display: block;
+            text-decoration: none;
+            color: #666;
+            padding:10px;
+            transition:all 0.3s;
+        }
+
+    language ul li a{
+            display: block;
+            text-decoration: none;
+            color: #666;
+            padding:10px;
+            transition:all 0.3s;
+        }
+    
+        language ul li.current a,
+        language ul li a:hover{
+            color:#fff;
+        }
 
     @media screen and (max-width:768px) {
         nav ul li a:hover{
