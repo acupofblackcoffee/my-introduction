@@ -34,7 +34,7 @@
 
 /*========= 現在地表示のためのCSS ===============*/
 
-    #header{
+    header{
         position: fixed;/*header固定*/
         height: 70px;/*Headerの高さ設定*/
         width:100%;
