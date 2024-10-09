@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kohei's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+    <link rel="stylesheet" type="text/css" href="241009main.css">
+
+</head>
+
+<body>
+    <header id="header div1">
+        <div class="top-title">
+            Kohei's Portfolio
+        </div>
+        <nav id="g-nav">
+            <ul>
+                <li><a href="#area-1">経歴・スキル</a></li><!--現在地のliにはJavaScriptでcurrentというクラス名がつきます-->
+                <li><a href="#area-2">プロダクト</a></li>
+                <li>ブログ(準備中)</li>
+                <li><a href="#">CV</a></li>
+                <li class="language">
+                    <ul style="justify-content: space-between;font-size: larger;">
+                        <li><a href="#">日本語</a></li>
+                        <div>/</div>
+                        <li><a href="#">简体中文</a></li>
+                        <div>/</div>
+                        <li><a href="#">English</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="div2">
+        <!--/area1-->
+        <section class="scroll-point fluid" id="area-1">
+            <h2>経歴・スキル</h2>
+            <div>
+                <h3>
+                    学歴<br>
+                    2023年 中国南開大学社会学院社会学専攻 修士課程 入学<br>
+                    2020年 明治大学政治経済学部政治学科 卒業<br>
+                    2016年 私立桐蔭学園高等学校理数科 卒業
+                </h3>
+                <h3>
+                    職歴<br>
+                    2021~2022年 株式会社M 購買部→WEB事業部<br>
+                    スキル<br>
+                    中国語ビジネスレベル,英語日常会話レベル,普通自動車免許(AT限定)<br>
+                    Adobe Illustrator,Photoshop,Canva
+                </h3>
+            </div>
+            <div class="photo">
+
+            </div>
+
+            <ul class="accordion-area">
+
+                <li><!--li ~ /li までが一つのアコーディオン-->
+                    <section>
+                        <h3 class="title">なぜ南開大学？</h3>
+                        <div class="box">
+                        <p>内容が入ります。</p>
+                        </div>
+                    </section>
+                </li>
+                <li><!--li ~ /li までが一つのアコーディオン-->
+                    <section>
+                        <h3 class="title">明治大学時代</h3>
+                        <div class="box">
+                        <p>内容が入ります。</p>
+                        </div>
+                    </section>
+                </li>
+                
+            </ul>
+
+        </section>
+
+        <!--/area3-->
+        <section class="scroll-point fluid" id="area-2">
+            <h2>プロダクト</h2>
+            
+            <ul class="gallery"><!--リンク先は表示させたいエリアのid名を指定します。-->
+                <li><a href="#gallery-1" class="gallery-list"><img src="img/01.jpg" alt=""></a></li>
+                <li><a href="#gallery-2" class="gallery-list"><img src="img/05.jpg" alt=""></a></li>
+                <li><a href="#gallery-3" class="gallery-list"><img src="img/09.jpg" alt=""></a></li>
+                </ul>
+                
+                <section id="gallery-1" class="hide-area"><!--id 名にサムネイル画像のリンク先と同じ名前を指定します。事前に非表示にするためhide-areaというクラス名も追加します。-->
+                <p><img src="img/01.jpg" alt=""><span class="caption">画像の説明</span></p>
+                <p><img src="img/02.jpg" alt=""><span class="caption">画像の説明</span></p>
+                <p><img src="img/03.jpg" alt=""><span class="caption">画像の説明</span></p>
+                <p><img src="img/04.jpg" alt=""><span class="caption">画像の説明</span></p>
+                </section>
+                
+                <section id="gallery-2" class="hide-area">
+                <p><img src="img/05.jpg" alt=""><span class="caption">画像の説明</span></p>
+                <p><img src="img/06.jpg" alt=""><span class="caption">画像の説明</span></p>
+                <p><img src="img/07.jpg" alt=""><span class="caption">画像の説明</span></p>
+                <p><img src="img/08.jpg" alt=""><span class="caption">画像の説明</span></p>
+                </section>
+            
+        </section>
+
+        <div class="div3">
+
+        </div>
+
+        <!--/area4
+        <section class="scroll-point" id="area-3">
+            <h2>研究</h2>
+            <p>内容が入ります。</p>
+            <p>内容が入ります。</p>
+            
+        </section>
+        -->
+
+    <!--/main-->
+    </main>
+
+    <footer class="div4">
+        <div id="wrapper">
+            <p>Contact : haoping0305@outlook.jp</p>
+            <p a href="">Do Not Sell My Personal Information</p>
+        </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
+    <!-- javascript -->
+    <!-- languages -->
+    <script src="/Users/kohei/Library/Mobile Documents/com~apple~CloudDocs/個人サイト/language.js"></script>
+    <!-- follow-menu -->
+    <script src="/Users/kohei/Library/Mobile Documents/com~apple~CloudDocs/個人サイト/nav.js"></script>
+    <!-- accordion -->
+    <script src="Users/kohei/Library/Mobile Documents/com~apple~CloudDocs/個人サイト/accordion.js"></script>
+    <!-- slide -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+    <script src="Users/kohei/Library/Mobile Documents/com~apple~CloudDocs/個人サイト/slider.js"></script>
+    <!-- raindrop -->
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+    <script src="js/raindrops.js"></script><!--Raindrops.js（https://daniellaharel.com/raindrops/）からダウンロードして使用-->
+    <script src="Users/kohei/Library/Mobile Documents/com~apple~CloudDocs/個人サイト/raindrop.js"></script>
+
+</body>
+
+</html>
