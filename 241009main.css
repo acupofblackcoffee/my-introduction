@@ -1,5 +1,9 @@
 body{
-    background-color: #C5956B;
+    background-color: #F5E6D3;
+}
+
+p h1 h2 h3 h4{
+    color:#333333;
 }
 
 photo{
@@ -39,7 +43,7 @@ language ul li a{
         display: flex;
         justify-content: space-around;
         align-items: center;
-        background:#b57e4f;
+        background:#4A3728;
         color:#fff;
         text-align: center;
         border-bottom:20px;
