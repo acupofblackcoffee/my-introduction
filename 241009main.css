@@ -17,29 +17,18 @@ photo{
     grid-template-rows: repeat(5, 1fr);
     gap: 8px;
 }
-    
-.div1 {
-    grid-column: span 5 / span 5;
+
+
+language li{
+    list-style:none;
+    display:flex;
+    color:#fff;
 }
 
-.div2 {
-    grid-column: span 3 / span 3;
-    grid-row: span 3 / span 3;
-    grid-row-start: 2;
+language ul li a{
+    text-decoration:none;
 }
 
-.div3 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-column-start: 4;
-    grid-row-start: 2;
-}
-
-.div4 {
-    grid-column: span 5 / span 5;
-    grid-row-start: 5;
-}
-        
 
 /*========= 現在地表示のためのCSS ===============*/
 
@@ -48,7 +37,7 @@ photo{
         height: 70px;/*Headerの高さ設定*/
         width:100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         background:#b57e4f;
         color:#fff;
