@@ -1,3 +1,8 @@
+//初期状態は隠す
+$(document).ready(function() {
+    $('.box').hide();
+});
+
 //アコーディオンをクリックした時の動作
 $('.title').on('click', function() {//タイトル要素をクリックしたら
 	var findElm = $(this).next(".box");//直後のアコーディオンを行うエリアを取得し
