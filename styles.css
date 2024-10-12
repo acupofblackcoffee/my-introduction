@@ -294,6 +294,7 @@ footer {
         flex-wrap: wrap;
         height: auto;
         padding: 10px;
+        jastify-content:center;
     }
 
     .site-title {
@@ -319,6 +320,8 @@ footer {
     body {
         padding-top: 120px;
     }
+    
+    
 }
 
 @media (max-width: 768px) {
