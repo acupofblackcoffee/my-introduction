@@ -263,6 +263,10 @@ footer {
     background: #666;
 }
 
+.modaal-content-container{
+    max-width:90%;
+}
+
 .caption {
     display: block;
     padding: 10px 0;
