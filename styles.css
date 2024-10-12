@@ -245,13 +245,15 @@ footer {
     display: none;
 }
 
-.modaal-close:after, 
-.modaal-close:before {
-    background: #ccc;    
+.modaal-fullscreen .modaal-content-container {
+    background: #333;
+    color: #fff;
+    text-align: center;
 }
 
-.modaal-container img {
-    max-width: 90%;
+.modaal-fullscreen .modaal-close {
+    background: none;
+    right: 20px;
 }
 
 .modaal-close:focus:after,
@@ -261,14 +263,26 @@ footer {
     background: #666;
 }
 
-#modaal-title {
-    font-size: 1.2rem;
-    text-align: center;
-    margin: 0 0 20px 0;
+.caption {
+    display: block;
+    padding: 10px 0;
 }
 
-.modaal-video .modaal-inner-wrapper {
-    padding: 0;
+.gallery {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gallery li {
+    width: 33.333%;
+    padding: 0 10px;
+    list-style: none;
+}
+
+.gallery img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
 }
 
 @media (max-width: 1024px) {
