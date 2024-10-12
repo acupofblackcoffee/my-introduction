@@ -17,15 +17,14 @@ $(document).ready(function() {
 
     // ギャラリーモーダル
     $(".gallery-list").modaal({
-        type: 'image',
-        fullscreen: true,
-        before_open: function(){
-            $('html').css('overflow-y','hidden');
-        },
-        after_close: function(){
-            $('html').css('overflow-y','scroll');
-        }
-    });
+    fullscreen: true,
+    before_open: function(){
+        $('html').css('overflow-y','hidden');
+    },
+    after_close: function(){
+        $('html').css('overflow-y','scroll');
+    }
+});
 
     // 言語切り替え機能
     $('.lang-btn').click(function() {
