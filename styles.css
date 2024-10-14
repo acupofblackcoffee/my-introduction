@@ -125,6 +125,9 @@ h2 {
     margin-bottom: 20px;
 }
 
+.modal-content h2{
+    color: var(--bg-color)
+}
 h3 {
     color: var(--accent-color);
     font-size: 1.5em;
@@ -311,7 +314,7 @@ footer {
 
     .site-title {
         max-width: 100%;
-        margin: auto;
+        margin-bottom: 10px;
     }
 
     .desktop-nav {
@@ -403,5 +406,9 @@ footer {
 
     .grid-container {
         grid-template-columns: 1fr;
+    }
+
+    .site-title{
+        margin: auto;
     }
 }
