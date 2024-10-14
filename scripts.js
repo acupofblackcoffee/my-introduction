@@ -40,24 +40,27 @@ $(document).ready(function() {
     $(`.lang-btn[data-lang="${savedLang}"]`).addClass('active');
 });
 
+
 function changeLanguage(lang) {
     $('[data-i18n]').each(function() {
         const key = $(this).data('i18n');
         $(this).text(translations[lang][key]);
     });
-
     // タイトルの変更
     document.title = translations[lang]['pageTitle'];
-
-    // 言語ボタンのアクティブ状態を更新
+    // 言語ボタンのアクティブ状態を更新（デスクトップとモーダル両方）
     $('.lang-btn').removeClass('active');
     $(`.lang-btn[data-lang="${lang}"]`).addClass('active');
-
     // 言語設定を保存
     localStorage.setItem('language', lang);
-
     // HTMLのlang属性を更新
     $('html').attr('lang', lang);
+    
+    // モバイルナビゲーションのテキスト更新
+    $('.mobile-nav .nav-item span').each(function() {
+        const key = $(this).data('i18n');
+        $(this).text(translations[lang][key]);
+    });
 }
 
 const modal = document.getElementById('languageModal');
@@ -82,3 +85,7 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
         modal.style.display = "none";
     }
 });
+
+
+
+
