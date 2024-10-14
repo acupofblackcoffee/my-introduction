@@ -79,13 +79,25 @@ body {
 .lang-btn {
     background: none;
     border: none;
-    color: var(--bg-color);
     cursor: pointer;
     font-size: 0.8em;
     padding: 3px 6px;
     transition: background-color 0.3s, color 0.3s;
     border-radius: 3px;
 }
+
+@media (min-width: 769px) {
+    .lang-btn {
+        color: var(--bg-color);
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+        background-color: var(--bg-color);
+        color: var(--main-color);
+    }
+}
+
 
 .lang-btn:hover,
 .lang-btn.active {
@@ -320,9 +332,27 @@ footer {
     body {
         padding-top: 120px;
     }
-    
-    
+
+    /* スマートフォン版のスタイル */
+    #languageModal .modal-content {
+        background-color: var(--main-color);
+        color: var(--bg-color);
+    }
+
+    #languageModal .lang-btn {
+        color: var(--bg-color);
+        font-size: 1em;
+        padding: 10px 15px;
+        margin: 5px;
+        border: 1px solid var(--bg-color);
+    }
+
+    #languageModal .lang-btn.active {
+        background-color: var(--bg-color);
+        color: var(--main-color);
+    }
 }
+
 
 @media (max-width: 768px) {
     .desktop-nav, .language-selector {
