@@ -1,91 +1,90 @@
-$(document).ready(function() {
-    // アコーディオン機能
-    $('.accordion-area .title').click(function() {
-        $(this).toggleClass('close');
-        $(this).next('.box').slideToggle();
-    });
+document.addEventListener('DOMContentLoaded', function () {
+    var HEADER_OFFSET = 70;
 
-    // スムーズスクロール
-    $('a[href^="#"]').click(function() {
-        var speed = 500;
-        var href = $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top - 70; // ヘッダーの高さ分を引く
-        $('body,html').animate({scrollTop:position}, speed, 'swing');
-        return false;
-    });
+    function changeLanguage(lang) {
+        var dict = window.translations[lang];
+        if (!dict) return;
 
-    // ギャラリーモーダル
-    $(".gallery-list").modaal({
-    fullscreen: true,
-    before_open: function(){
-        $('html').css('overflow-y','hidden');
-    },
-    after_close: function(){
-        $('html').css('overflow-y','scroll');
+        document.querySelectorAll('[data-i18n]').forEach(function (el) {
+            var key = el.getAttribute('data-i18n');
+            if (dict[key] !== undefined) {
+                el.textContent = dict[key];
+            }
+        });
+
+        document.title = dict.pageTitle;
+
+        document.querySelectorAll('.lang-btn').forEach(function (btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+
+        localStorage.setItem('language', lang);
+        document.documentElement.setAttribute('lang', lang);
     }
-});
 
-    // 言語切り替え機能
-    $('.lang-btn').click(function() {
-        const lang = $(this).data('lang');
-        changeLanguage(lang);
+    // 言語切り替えボタン（デスクトップ・モバイルモーダル共通）
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            changeLanguage(btn.getAttribute('data-lang'));
+            var modal = document.getElementById('languageModal');
+            if (modal) modal.style.display = 'none';
+        });
     });
 
-    // 初期言語の設定
-    const savedLang = localStorage.getItem('language') || 'ja';
+    var savedLang = localStorage.getItem('language') || 'ja';
     changeLanguage(savedLang);
 
-    // 初期言語のアクティブ状態を設定
-    $(`.lang-btn[data-lang="${savedLang}"]`).addClass('active');
-});
-
-
-function changeLanguage(lang) {
-    $('[data-i18n]').each(function() {
-        const key = $(this).data('i18n');
-        $(this).text(translations[lang][key]);
+    // スムーススクロール（ヘッダー分のオフセットを差し引く）
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            var href = link.getAttribute('href');
+            if (!href || href === '#') return;
+            var target = document.querySelector(href);
+            if (!target) return;
+            e.preventDefault();
+            var top = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+        });
     });
-    // タイトルの変更
-    document.title = translations[lang]['pageTitle'];
-    // 言語ボタンのアクティブ状態を更新（デスクトップとモーダル両方）
-    $('.lang-btn').removeClass('active');
-    $(`.lang-btn[data-lang="${lang}"]`).addClass('active');
-    // 言語設定を保存
-    localStorage.setItem('language', lang);
-    // HTMLのlang属性を更新
-    $('html').attr('lang', lang);
-    
-    // モバイルナビゲーションのテキスト更新
-    $('.mobile-nav .nav-item span').each(function() {
-        const key = $(this).data('i18n');
-        $(this).text(translations[lang][key]);
-    });
-}
 
-const modal = document.getElementById('languageModal');
-const modalToggle = document.getElementById('languageModalToggle');
-
-modalToggle.onclick = function(e) {
-    e.preventDefault();
-    modal.style.display = "block";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    // 言語選択モーダル（モバイル）
+    var modal = document.getElementById('languageModal');
+    var modalToggle = document.getElementById('languageModalToggle');
+    if (modalToggle && modal) {
+        modalToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+        });
+        window.addEventListener('click', function (e) {
+            if (e.target === modal) modal.style.display = 'none';
+        });
     }
-}
 
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.onclick = function() {
-        const lang = this.getAttribute('data-lang');
-        console.log('Language changed to:', lang);
-        // ここで実際の言語切り替え処理を行う
-        modal.style.display = "none";
+    // ライトボックス（デザイン制作物ギャラリー）
+    var lightbox = document.getElementById('lightbox');
+    var lightboxBody = document.getElementById('lightbox-body');
+    var lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.gallery-list').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            var targetId = link.getAttribute('href').slice(1);
+            var source = document.getElementById(targetId);
+            if (!source || !lightbox || !lightboxBody) return;
+            lightboxBody.innerHTML = source.innerHTML;
+            lightbox.showModal();
+        });
+    });
+
+    if (lightboxClose && lightbox) {
+        lightboxClose.addEventListener('click', function () {
+            lightbox.close();
+        });
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) lightbox.close();
+        });
     }
 });
-
-
-
-
